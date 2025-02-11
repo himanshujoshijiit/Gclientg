@@ -1,0 +1,57 @@
+/* Centering the auth container */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Beautiful form design */
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  /* Button styling */
+  button {
+    width: 95%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #0056b3, #0099ff);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    .auth-container {
+      width: 90%;
+    }
+  }
+  
