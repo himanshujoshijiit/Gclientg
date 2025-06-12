@@ -1,18 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-import Login from './components/login';
-import Dashboard from './components/Dashboard';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useContext } from 'react';
+import { KeycloakContext } from './KeycloakProvider';
+import AccountPage from './components/AccountPage';
+import './App.css'; // ← Add this line at the top
+
+
+  
 
 
 function App() {
+  const { keycloak, authenticated } = useContext(KeycloakContext);
+
+  if (!authenticated) {
+    return <div>Checking authentication...</div>;
+  }
+
   return (
-     <Router>
-      <Routes>
-        <Route path="/" element={<Login/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
-      </Routes>
-     </Router>
+     
+        <div>
+      {/* <h1>Welcome, {keycloak.tokenParsed?.preferred_username}</h1>
+      <button onClick={() => keycloak.logout()}>Logout</button> */}
+            <AccountPage keycloak={keycloak} />
+
+    </div>
+        
+     
   );
 }
 
